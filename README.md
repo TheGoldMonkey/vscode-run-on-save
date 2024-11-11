@@ -85,7 +85,7 @@ If you need to run VS Code's commands change `runIn` option to `vscode`
 }
 ```
 
-
+pnpx ts-json-schema-generator -p shit.ts > shit.json 
 ### Variable Substitution
 
 Can be used in `command`, `runningStatusMessage`, `finishStatusMessage`, `globMatch`.

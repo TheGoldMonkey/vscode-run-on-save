@@ -7,5 +7,43 @@
         "out": true // set this to false to include "out" folder in search results
     },
     // Turn off tsc task auto detection since we have the necessary tasks as npm scripts
-    "typescript.tsc.autoDetect": "off"
+    "typescript.tsc.autoDetect": "off",
+    "runOnSave.commands": [
+        // {
+        //     "globMatch": "**/*.nim",
+        //     "command": "nimble buildwasm --verbose",
+        //     "runIn": "terminal",
+        // },
+        // {
+        //     "globMatch": "**/*.nimble",
+        //     "command": "nimble buildwasm --verbose",
+        //     "runIn": "terminal",
+        // },
+        // {
+        //     "globMatch": "**/*.nims",
+        //     "command": "nimble buildwasm --verbose",
+        //     "runIn": "terminal",
+        // },
+        {
+            "globMatch": "**/*.nim",
+            "command": "nim r ${file}",
+            "runIn": "terminal",
+        },
+        {
+            "globMatch": "**/*.nimble",
+            "command": "nimble r",
+            "runIn": "terminal",
+        },
+        {
+            "globMatch": "**/*.nims",
+            "command": "nimble r",
+            "runIn": "terminal",
+        },
+        {
+            "globMatch": "**/*.ts",
+            //   "command": "tsx /home/user/workspace/mcvm_v8/src/runner.ts ${file}",
+            "command": "pnpm dlx tsx ${file}",
+            "runIn": "terminal"
+        }
+    ],
 }
